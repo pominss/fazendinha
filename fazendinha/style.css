@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cceeff;
+    padding: 20px;
+}
+
+/* Estilo geral dos blocos */
+.ceu, .grama, .rio {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Céu */
+.ceu {
+    background-color: #87CEEB;
+    height: 200px;
+}
+
+/* Grama */
+.grama {
+    background-color: #90EE90;
+    height: 200px;
+}
+
+/* Rio */
+.rio {
+    background-color: #1E90FF;
+    height: 150px;
+}
+
+/* Elementos gerais */
+.ceu div, .grama div, .rio div {
+    position: absolute;
+    font-size: 2em;
+}
+
+/* Sol */
+.sol {
+    top: 20px;
+    left: 20px;
+    animation: girar 10s linear infinite;
+}
+
+/* Nuvens */
+.nuvem:nth-of-type(1) {
+    top: 30px;
+    animation: moverNuvem 20s linear infinite;
+}
+
+.nuvem:nth-of-type(2) {
+    top: 60px;
+    animation: moverNuvem 15s linear infinite;
+}
+
+/* Avião */
+.aviao {
+    animation: moverAviao 15s linear infinite;
+}
+
+/* Animais na grama */
+.vaca {
+    bottom: 20px;
+    left: 20%;
+    animation: animalMover 8s ease-in-out infinite;
+}
+
+.porco {
+    bottom: 20px;
+    left: 40%;
+    animation: animalMover 6s ease-in-out infinite;
+}
+
+.galinha {
+    bottom: 20px;
+    left: 60%;
+    animation: animalPular 3s ease-in-out infinite;
+}
+
+/* Flores espalhadas */
+.flor {
+    bottom: 10px;
+    animation: balancar 3s ease-in-out infinite;
+}
+
+.flor:nth-of-type(1) { left: 5%; }
+.flor:nth-of-type(2) { left: 25%; bottom: 15px; }
+.flor:nth-of-type(3) { left: 45%; bottom: 8px; }
+.flor:nth-of-type(4) { left: 65%; bottom: 12px; }
+.flor:nth-of-type(5) { left: 85%; bottom: 20px; }
+
+/* Elementos do rio */
+.peixe {
+    animation: nadar 6s ease-in-out infinite;
+}
+
+.peixe:nth-of-type(1) {
+    top: 30px;
+}
+
+.peixe:nth-of-type(2) {
+    top: 80px;
+}
+
+.barco {
+    right: 40%;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.pessoa {
+    right: 42%;
+    animation: pular 2s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes moverNuvem {
+    from { left: -100px; }
+    to { left: 100%; }
+}
+
+@keyframes moverAviao {
+    from { left: -100px; top: 50px; }
+    to { left: 100%; top: 50px; }
+}
+
+@keyframes nadar {
+    0% { left: 0; }
+    50% { left: 50%; }
+    100% { left: 0; }
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pular {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes animalMover {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes animalPular {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes balancar {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
